@@ -66,8 +66,8 @@ public class SpendingGoalAPI {
 //        }
 //        return "image/"+name;
 //    }
-    @GetMapping("/search")
-    public List<SpendingGoal> findByName(@RequestParam(defaultValue = "") String name){
+    @GetMapping("/check/{name}")
+    public SpendingGoal findByName(@PathVariable String name){
         return ispendingGoalService.findByName(name);
     }
 

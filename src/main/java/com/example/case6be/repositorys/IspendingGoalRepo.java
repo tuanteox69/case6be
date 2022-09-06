@@ -17,5 +17,7 @@ public interface IspendingGoalRepo extends JpaRepository<SpendingGoal,Integer> {
     @Query(nativeQuery = true,value = "SELECT * FROM case6.spending_goal where user_id =:id")
     List<SpendingGoal> checknamebyid(int id);
 
+    SpendingGoal findByName(String name);
+
 
 }

@@ -8,11 +8,13 @@ public interface IspendingGoalService {
     Iterable<SpendingGoal> findAll();
 
     SpendingGoal findById(int id);
+
+
     List<SpendingGoal> finByiduser(int id);
 
     SpendingGoal save(SpendingGoal spendingGoal);
 
     void delete(int id);
 
-    List<SpendingGoal> findByName(String name);
+    SpendingGoal findByName(String name);
 }

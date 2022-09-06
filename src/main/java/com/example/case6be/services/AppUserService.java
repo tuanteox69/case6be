@@ -40,4 +40,8 @@ public class AppUserService implements UserDetailsService {
     public AppUser save(AppUser appUser){
         return iAppUserRepo.save(appUser);
     }
+
+    public AppUser findById(long id){
+        return iAppUserRepo.findById(id).get();
+    }
 }

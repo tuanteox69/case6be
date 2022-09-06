@@ -2,8 +2,10 @@ package com.example.case6be.controllers;
 
 import com.example.case6be.models.AppUser;
 import com.example.case6be.models.Role;
+import com.example.case6be.models.Wallet;
 import com.example.case6be.models.dto.UserToken;
 import com.example.case6be.services.AppUserService;
+import com.example.case6be.services.IWalletService;
 import com.example.case6be.services.JwtService;
 
 import com.example.case6be.services.SendMailService;
@@ -52,7 +54,7 @@ public class LoginAPI {
 
     @PostMapping("/register")
     public ResponseEntity<AppUser> register(@RequestBody AppUser appUser){
-        sendMailService.sendMail(appUser);
+//        sendMailService.sendMail(appUser);
        return new ResponseEntity<>(appUserService.save(appUser), HttpStatus.OK);
     }
 
@@ -63,6 +65,7 @@ public class LoginAPI {
     @PostMapping("/checkemail")
     public ResponseEntity<AppUser> checkemail(@RequestBody String email){
         System.out.printf("email" + appUserService.findByemail(email) );
+
         return new ResponseEntity<>(appUserService.findByemail(email), HttpStatus.OK);
     }
 

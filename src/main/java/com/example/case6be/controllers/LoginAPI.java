@@ -52,7 +52,7 @@ public class LoginAPI {
 
     @PostMapping("/register")
     public ResponseEntity<AppUser> register(@RequestBody AppUser appUser){
-        sendMailService.sendMail(appUser);
+//        sendMailService.sendMail(appUser);
        return new ResponseEntity<>(appUserService.save(appUser), HttpStatus.OK);
     }
 

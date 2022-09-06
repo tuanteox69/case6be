@@ -19,5 +19,4 @@ public interface IspendingGoalRepo extends JpaRepository<SpendingGoal,Integer> {
 
     SpendingGoal findByName(String name);
 
-
 }
